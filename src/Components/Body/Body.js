@@ -112,7 +112,11 @@ function Body(props) {
         <div className="body_main">
           <div className="body_main_news">
             {news?.map((item) => (
-              <Card data={item} key={Math.random() * 30 + Date.now()} />
+              <Card
+                data={item}
+                key={Math.random() * 30 + Date.now()}
+                readMore={false}
+              />
             ))}
           </div>
           <div className="body_main_filter">

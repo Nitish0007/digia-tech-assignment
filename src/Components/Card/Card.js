@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import moment from "moment";
 
 import "./Card.css";
 
 function Card(props) {
+  console.log(props.data);
+  const [showMore, setShowMore] = useState(false);
   return (
     <div className="card">
       {props?.data?.urlToImage ? (
@@ -15,10 +18,15 @@ function Card(props) {
       >
         <p className="card_title">{props?.data?.title}</p>
         <p className="card_content_desc">
-          {props?.data?.description?.length > 60
+          {!showMore
             ? props.data.description.slice(0, 60)
             : props?.data?.description}
-          <span style={{ color: "grey", cursor: "pointer" }}> more...</span>
+          <span
+            style={{ color: "grey", cursor: "pointer" }}
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "  less" : " ...more"}
+          </span>
         </p>
         <p
           style={{
@@ -31,7 +39,18 @@ function Card(props) {
         >
           -{props?.data?.author ? props.data.author : "Author"}
         </p>
-        {/* <Link to={props?.data?.url}>Go to Source</Link> */}
+        <p
+          onClick={() => window.open(`${props?.data?.url}`, "_blank")}
+          style={{
+            cursor: "pointer",
+            fontSize: "16px",
+            color: "rgb(1, 100, 124)",
+            textAlign: "right",
+            padding: "5px",
+          }}
+        >
+          Go to Source
+        </p>
         <p
           style={{
             textAlign: "right",
@@ -40,7 +59,7 @@ function Card(props) {
             padding: "5px",
           }}
         >
-          2021-09-24T01:22:24.9297636Z
+          {moment.utc(props?.data?.publishedAt).toDate().toUTCString()}
         </p>
       </div>
     </div>
