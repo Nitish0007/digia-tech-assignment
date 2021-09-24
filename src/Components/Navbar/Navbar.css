@@ -1,0 +1,44 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  padding: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar_search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3px;
+}
+
+.navbar_search input {
+  width: 250px;
+  font-size: 16px;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 1px 1px 20px 0px #ccc;
+          box-shadow: 1px 1px 20px 0px #ccc;
+  border-radius: 5px;
+}
+
+.navbar_search button {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: #01647c;
+}
+/*# sourceMappingURL=Navbar.css.map */

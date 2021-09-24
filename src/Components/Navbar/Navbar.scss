@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  background-color: #fff;
+  padding: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar_search {
+  display: flex;
+  gap: 3px;
+}
+.navbar_search input {
+  width: 250px;
+  font-size: 16px;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 20px 0px #ccc;
+  border-radius: 5px;
+}
+.navbar_search button {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: rgb(1, 100, 124);
+}

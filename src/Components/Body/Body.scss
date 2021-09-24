@@ -1,0 +1,50 @@
+.body {
+  padding: 25px;
+}
+.body_main {
+  display: flex;
+  gap: 30px;
+}
+.body_main_news {
+  width: 70%;
+  border-right: 1px solid rgb(1, 100, 124);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.body_main_filter {
+  position: sticky;
+  top: 0;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: fit-content;
+}
+.body_main_filter-top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.body_main_filter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.body_main_filter-body button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: rgb(1, 100, 124);
+}

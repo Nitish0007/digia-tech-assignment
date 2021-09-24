@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
+import Body from "./Components/Body/Body";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
+  const [searchedData, setSearchedData] = useState([]);
+  const searchDataHandler = async (keyword) => {
+    const response = await fetch(
+      `https://newsapi.org/v2/everything?q=${keyword}&apiKey=a3ddae7573ad43e292472c388c8af9c6`
+    );
+    const searchResult = await response.json();
+    setSearchedData(searchResult.articles);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar searched={searchDataHandler} />
+      <Body searchedData={searchedData} />
     </div>
   );
 }
